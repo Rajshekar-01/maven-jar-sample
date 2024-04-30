@@ -1,6 +1,6 @@
 RUN apt  update && \
     apt install -y git
-RUN git clone https://github.com/ArunReddy-7/maven-jar-sample.git
+RUN git clone https://github.com/Rajshekar-01/maven-jar-sample.git
 
 WORKDIR /app/maven-jar-sample
 
