@@ -5,6 +5,6 @@ FROM openjdk:11-jre
 WORKDIR /app
 
 # Copy the JAR file into the container
-COPY target/ maven-jar-sample-1.0-SNAPSHOT.jar /app
+COPY target/maven-jar-sample-1.0-SNAPSHOT.jar /app/
 # Specify the command to run your application
 CMD ["java", "-jar", " maven-jar-sample-1.0-SNAPSHOT.jar"]
