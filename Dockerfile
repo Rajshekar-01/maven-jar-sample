@@ -1,17 +1,11 @@
-RUN apt  update && \
-    apt install -y git
-RUN git clone https://github.com/Rajshekar-01/maven-jar-sample.git
+# Use a Java runtime base image
+FROM openjdk:11-jre
 
-WORKDIR /app/maven-jar-sample
+# Set the working directory inside the container
+WORKDIR /app
 
-RUN mvn -version
-RUN mvn clean package
-FROM openjdk:11-jre-slim
-WORKDIR /build
-COPY --from=builder /app/maven-jar-sample/target/*.jar /build/app.jar
+# Copy the JAR file into the container
+COPY target/your-application.jar /app/your-application.jar
 
-EXPOSE 8080
-
-
-CMD ["java", "-jar", "app.jar"]
-
+# Specify the command to run your application
+CMD ["java", "-jar", "your-application.jar"]
